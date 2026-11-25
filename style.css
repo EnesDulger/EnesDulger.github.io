@@ -1,0 +1,347 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --arka: #ffffff;
+  --yazi: #111111;
+  --soluk: #6b6b6b;
+  --cizgi: #cfcfcf;
+  --vurgu: #e9e3f5;
+  --yan: 240px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--arka);
+  color: var(--yazi);
+  font-family: "Archivo", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+/* Üst kısım */
+.ust {
+  display: grid;
+  grid-template-columns: 1fr var(--yan);
+  border-top: 1px solid var(--cizgi);
+  margin: 40px 24px 0;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 0 0 16px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+}
+
+.menu a {
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* Kapak */
+.kapak {
+  margin: 40px 24px 0;
+  border-top: 1px solid var(--cizgi);
+  border-bottom: 1px solid var(--cizgi);
+  padding: 14px 0 10px;
+}
+
+.kapak h1 {
+  font-size: clamp(42px, 9vw, 110px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.unvan {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+/* Fotoğraf alanı */
+.vitrin {
+  display: grid;
+  grid-template-columns: 1fr var(--yan);
+  margin: 40px 24px 0;
+  border-top: 1px solid var(--cizgi);
+  min-height: 380px;
+}
+
+.vitrin-sol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 24px 20px 0;
+  background: linear-gradient(120deg, #ffffff 0%, var(--vurgu) 55%, #f6f1fb 100%);
+}
+
+.etiket {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  color: var(--soluk);
+  padding-left: 4px;
+}
+
+.ok-link {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  text-align: right;
+}
+
+.foto-kutu {
+  position: relative;
+  background: #e4e4e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.foto-kutu img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.bas-harf {
+  font-size: 64px;
+  font-weight: 800;
+  color: #bdbdbd;
+}
+
+/* Bölümler */
+main {
+  margin: 0 24px;
+}
+
+.bolum {
+  display: grid;
+  grid-template-columns: var(--yan) 1fr;
+  gap: 24px;
+  border-top: 1px solid var(--cizgi);
+  padding: 32px 0 48px;
+  margin-top: 40px;
+}
+
+.bolum-baslik {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.bolum-icerik {
+  max-width: 720px;
+}
+
+.bolum-icerik p {
+  margin-bottom: 14px;
+}
+
+.buyuk {
+  font-size: 24px;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.ikili {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.kucuk-baslik {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--soluk);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.etiketler {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.etiketler li {
+  border: 1px solid var(--yazi);
+  padding: 3px 10px;
+  font-size: 14px;
+}
+
+.liste {
+  list-style: none;
+}
+
+.liste li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--cizgi);
+  padding: 6px 0;
+}
+
+.liste span {
+  color: var(--soluk);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+}
+
+/* Deneyim / proje kayıtları */
+.kayit {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--cizgi);
+}
+
+.kayit:first-child {
+  padding-top: 0;
+}
+
+.kayit:last-child {
+  border-bottom: none;
+}
+
+.kayit-tarih {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  color: var(--soluk);
+  padding-top: 3px;
+}
+
+.kayit h3 {
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.kayit ul {
+  padding-left: 18px;
+}
+
+.kayit li {
+  margin-bottom: 4px;
+}
+
+.rozet {
+  display: inline-block;
+  background: var(--vurgu);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  padding: 2px 8px;
+}
+
+/* İletişim */
+.iletisim-liste {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.iletisim-liste li {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  border-bottom: 1px solid var(--cizgi);
+  padding: 10px 0;
+}
+
+.iletisim-liste span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  color: var(--soluk);
+}
+
+/* Alt kısım */
+.alt {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 24px;
+  padding: 20px 0 40px;
+  border-top: 1px solid var(--yazi);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+}
+
+/* Telefon ve tablet */
+@media (max-width: 760px) {
+  .ust,
+  .vitrin,
+  .bolum,
+  .ikili {
+    grid-template-columns: 1fr;
+  }
+
+  .ust,
+  .kapak,
+  .vitrin,
+  main,
+  .alt {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .ust {
+    margin-top: 20px;
+  }
+
+  .ust-sol {
+    display: none;
+  }
+
+  .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    padding-left: 0;
+  }
+
+  .vitrin {
+    min-height: 0;
+  }
+
+  .vitrin-sol {
+    min-height: 140px;
+    padding-right: 0;
+  }
+
+  .foto-kutu {
+    height: 340px;
+  }
+
+  .bolum {
+    gap: 12px;
+  }
+
+  .buyuk {
+    font-size: 20px;
+  }
+
+  .kayit {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
